@@ -80,7 +80,7 @@ $(document).ready(function ($) {
                         easing: "ease-in-out",
                     },
                     load: {
-                        filter: ".all, .charcuterie, .marinee, .sugele, .viandescrues",
+                        filter: ".all, .charcuterie, .marinee, .sugele, .viandes",
                     },
                 });
             },
