@@ -1132,66 +1132,77 @@ p {
 }
 
 /* ************************ */
-
-.newsletter-box {
-    padding: 60px;
-    border-radius: 30px;
-    position: relative;
-    overflow: hidden;
+.recette {
+    display: grid;
+    width: 90%;
+    margin: 40px auto;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
 }
 
-.newsletter-form {
-    margin-top: 20px;
+.front img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.recette1 {
     position: relative;
 }
 
-.newsletter-form button {
+.front h2 {
     position: absolute;
-    right: 6px;
     top: 50%;
-    transform: translate(0, -50%);
+    left: 30%;
 }
 
-.newsletter-form .form-input {
-    height: 68px;
-    border-radius: 60px;
-    padding: 0 150px 0 40px;
-    background: linear-gradient(-145deg, #e4e4e4, #f9f9f9);
-}
-
-.newsletter-box-text {
-    padding: 0 60px;
-    color: #ffffff;
-}
-
-.newsletter-box-text .h2-title {
-    color: #ffffff;
-}
-
-.bg-overlay {
+.back {
     position: absolute;
     top: 0;
     left: 0;
-    bottom: 0;
     right: 0;
-    background: #f8f9fa;
-    opacity: 0.96;
+    bottom: 0;
+    background: #dad3d3;
+    color: #000;
+    padding: 15px;
+    transform: perspective(600px) rotateY(180deg);
+    transition: transform .5s linear 0s;
+    backface-visibility: hidden;
+    border-radius: 10px
 }
 
-.dark-overlay {
-    background: #0d0d25;
-    opacity: 0.5;
+.front {
+    color: white;
+    transform: perspective(600px) rotateY(0deg);
+    transition: transform .5s linear 0s;
+
+
 }
 
-.sec-btn.primary-btn {
-    background: linear-gradient(145deg, greenyellow, green);
-    color: #ffff;
-    border: none;
-    box-shadow: 4px 4px 8px #9e9e9e, -4px -4px 8px #ffffff;
+.recette1:hover>.front {
+    transform: perspective(600px) rotateY(-180deg);
+    cursor: pointer;
 }
 
-.sec-btn.primary-btn:hover {
-    background: linear-gradient(145deg, #0c0c21, #0e0e28);
+.recette1:hover>.back {
+    transform: perspective(600px) rotateY(0deg);
+    cursor: pointer;
+
+
+}
+
+@media(max-width: 800px) {
+    .recette {
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+}
+
+@media(max-width: 500px) {
+    .recette {
+        grid-template-columns: repeat(1, 1fr);
+
+    }
 }
 
 /* ***************** footer ****************** */
